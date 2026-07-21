@@ -144,6 +144,10 @@ a{color:inherit;text-decoration:none}
 .quote p{font-size:16.5px;line-height:1.6;color:#e7ebff;margin:0 0 18px}
 .quote .who{font-family:var(--cond);font-size:14px;color:var(--muted);letter-spacing:.03em}
 .quote .who b{display:block;font-family:var(--xcond);font-weight:800;font-size:17px;letter-spacing:.02em;color:#fff;text-transform:uppercase;margin-bottom:2px}
+.quote .tag{display:inline-block;font-family:var(--cond);font-weight:800;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.quote.feat{grid-column:1/-1;border:1px solid rgba(232,151,0,.45);border-left:4px solid var(--orange);background:linear-gradient(160deg,#111a5c 0%,#0a1144 62%)}
+.quote.hero{padding:34px 34px 30px}
+.quote.hero p{font-size:clamp(20px,2.5vw,29px);line-height:1.34;color:#fff;font-weight:500}
 
 /* ---------- steps ---------- */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;counter-reset:s}
@@ -310,7 +314,7 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
 <section>
   <div class="wrap">
     <div class="eyebrow">From inside Lithia</div>
-    <h2>Two of your own,<br>on the record.</h2>
+    <h2>From leadership<br>to the lot.</h2>
     <div class="vids">
       <div class="vid">
         <div class="frame"><iframe src="https://www.youtube.com/embed/9FgWqLNEZ2Q" title="Terry Lange on Auto Hauler Exchange" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
@@ -323,6 +327,16 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
     </div>
 
     <div class="quotes">
+      <blockquote class="quote feat hero">
+        <span class="tag">Lithia leadership</span>
+        <p>&ldquo;I&rsquo;ve referred a number of my dealers to Auto Hauler Exchange, and I&rsquo;d do it again in a heartbeat. Faster coverage, better rates, and a leadership team I know and trust to deliver.&rdquo;</p>
+        <div class="who"><b>Mike Cavanaugh</b>Operations President, Lithia Motors</div>
+      </blockquote>
+      <blockquote class="quote feat">
+        <span class="tag">Lithia leadership</span>
+        <p>&ldquo;I am pleased to recommend Auto Hauler Exchange based on my experience working with their team. Throughout our business relationship, Auto Hauler Exchange has consistently demonstrated professionalism, reliability, and a strong commitment to customer service. Communication has always been prompt and transparent, ensuring that shipments are tracked effectively and any potential issues are addressed quickly. Their attention to detail and commitment to meeting deadlines have contributed to smooth and successful vehicle deliveries. I have found them to be a trusted partner who understands the importance of timely and safe vehicle transportation. I would confidently recommend Auto Hauler Exchange to any store seeking a dependable and professional vehicle transport provider.&rdquo;</p>
+        <div class="who"><b>Dave West</b>Pre-Owned Director, DCH East / Prestige Auto Group</div>
+      </blockquote>
       <blockquote class="quote">
         <p>&ldquo;You guys went above and beyond my expectations. Sometimes after posting a load, we have drivers before the cars are even ready. Your pricing has always come in much less than anything else I used. I won&rsquo;t use another transport company again.&rdquo;</p>
         <div class="who"><b>Brian Plauman</b>Pre-Owned Sales Manager, CDJR of Farmington Hills</div>
@@ -338,10 +352,6 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
       <blockquote class="quote">
         <p>&ldquo;I can vouch for Auto Hauler Exchange. The ease and efficiency simplifies what we used to dread having to deal with.&rdquo;</p>
         <div class="who"><b>Dave Gottschalk</b>General Manager, Suburban Toyota of Troy</div>
-      </blockquote>
-      <blockquote class="quote" style="grid-column:1/-1">
-        <p>&ldquo;I am pleased to recommend Auto Hauler Exchange based on my experience working with their team. Throughout our business relationship, Auto Hauler Exchange has consistently demonstrated professionalism, reliability, and a strong commitment to customer service. Communication has always been prompt and transparent, ensuring that shipments are tracked effectively and any potential issues are addressed quickly. Their attention to detail and commitment to meeting deadlines have contributed to smooth and successful vehicle deliveries. I have found them to be a trusted partner who understands the importance of timely and safe vehicle transportation. I would confidently recommend Auto Hauler Exchange to any store seeking a dependable and professional vehicle transport provider.&rdquo;</p>
-        <div class="who"><b>Dave West</b>Pre-Owned Director, DCH East / Prestige Auto Group</div>
       </blockquote>
     </div>
   </div>
