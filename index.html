@@ -272,14 +272,9 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
       </div>
       <div class="ticket-out">
         <div class="out-row">
-          <span class="out-k">Estimated savings per vehicle</span>
-          <div class="out-v" id="saveVeh" style="color:var(--orange)">Save $228</div>
+          <span class="out-k">Estimated savings on this lane</span>
+          <div class="out-v" id="saveTotal" style="color:var(--orange)">Save $228</div>
           <div class="out-sub" id="saveNote">30% below what you pay now.</div>
-        </div>
-        <div class="out-row">
-          <span class="out-k">Estimated total savings on this lane</span>
-          <div class="out-v" style="font-size:32px;color:var(--orange)" id="saveTotal">Save $228</div>
-          <div class="out-sub" id="saveTotalSub">On one unit vs. your current partner.</div>
         </div>
         <div class="out-row">
           <span class="out-k">What it clears at on AHX</span>
@@ -341,12 +336,12 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
         <div class="who"><b>Elvedin Hairic</b>Used Vehicle Buyer, Wilde Honda</div>
       </blockquote>
       <blockquote class="quote">
-        <p>&ldquo;I am pleased to recommend Auto Hauler Exchange. Communication has always been prompt and transparent, ensuring shipments are tracked effectively and any issues addressed quickly. A trusted partner who understands the importance of timely and safe vehicle transportation.&rdquo;</p>
-        <div class="who"><b>Dave West</b>Pre-Owned Director, DCH East / Prestige Auto Group</div>
-      </blockquote>
-      <blockquote class="quote" style="grid-column:1/-1">
         <p>&ldquo;I can vouch for Auto Hauler Exchange. The ease and efficiency simplifies what we used to dread having to deal with.&rdquo;</p>
         <div class="who"><b>Dave Gottschalk</b>General Manager, Suburban Toyota of Troy</div>
+      </blockquote>
+      <blockquote class="quote" style="grid-column:1/-1">
+        <p>&ldquo;I am pleased to recommend Auto Hauler Exchange based on my experience working with their team. Throughout our business relationship, Auto Hauler Exchange has consistently demonstrated professionalism, reliability, and a strong commitment to customer service. Communication has always been prompt and transparent, ensuring that shipments are tracked effectively and any potential issues are addressed quickly. Their attention to detail and commitment to meeting deadlines have contributed to smooth and successful vehicle deliveries. I have found them to be a trusted partner who understands the importance of timely and safe vehicle transportation. I would confidently recommend Auto Hauler Exchange to any store seeking a dependable and professional vehicle transport provider.&rdquo;</p>
+        <div class="who"><b>Dave West</b>Pre-Owned Director, DCH East / Prestige Auto Group</div>
       </blockquote>
     </div>
   </div>
@@ -418,25 +413,19 @@ function estimate(){
   $('ahxSub').textContent=money(per)+' per vehicle · typical range '+money(per*LO)+' – '+money(per*HI);
 
   const broker=+$('broker').value||0;
-  const sVeh=$('saveVeh'), sNote=$('saveNote'), sTot=$('saveTotal'), sTotSub=$('saveTotalSub');
-  const unitLabel=(n>1?n+' units':'one unit');
+  const sTot=$('saveTotal'), sNote=$('saveNote');
+  const across=(n>1?', across '+n+' units.':'.');
   if(!broker){
-    sVeh.style.color=MUTED; sVeh.textContent='—';
-    sNote.textContent='Enter your current per-vehicle cost to see your savings.';
     sTot.style.color=MUTED; sTot.textContent='—';
-    sTotSub.textContent='On '+unitLabel+', AHX clears at about '+money(total)+'.';
+    sNote.textContent='Enter your current per-vehicle cost to see your savings.';
   }else{
     const diff=broker-per, pct=diff/broker*100;
     if(diff>0){
-      sVeh.style.color=ORANGE; sVeh.textContent='Save '+money(diff);
-      sNote.textContent=pct.toFixed(0)+'% below what you pay now.';
       sTot.style.color=ORANGE; sTot.textContent='Save '+money(diff*n);
-      sTotSub.textContent='On '+unitLabel+' vs. your current partner.';
+      sNote.textContent=pct.toFixed(0)+'% below what you pay now'+across;
     }else{
-      sVeh.style.color=MUTED; sVeh.textContent=money(Math.abs(diff))+' more';
+      sTot.style.color=MUTED; sTot.textContent=money(Math.abs(diff)*n)+' more';
       sNote.textContent='AHX comes in above this lane — worth a call on mix and timing.';
-      sTot.style.color=MUTED; sTot.textContent='—';
-      sTotSub.textContent='Lane mix, timing and unit type all move this.';
     }
   }
   $('ticketId').textContent='AHX-LITHIA-'+String(Math.round(mi)).padStart(4,'0')+'-'+n;
