@@ -178,6 +178,15 @@ footer{background:#000;border-top:1px solid var(--line);padding-block:44px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
 footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spacing:.02em;text-transform:uppercase}
 .data-note{font-family:var(--cond);font-size:12px;letter-spacing:.02em;color:var(--muted-dim);max-width:64ch;line-height:1.6}
+.contact{margin-top:36px;display:flex;flex-wrap:wrap;gap:20px 48px;border-top:1px solid rgba(255,255,255,.18);padding-top:28px}
+.contact-item{display:flex;flex-direction:column;gap:6px}
+.contact-k{font-family:var(--cond);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#aebbff}
+.contact-item a{font-family:var(--xcond);font-weight:800;font-size:clamp(19px,2.3vw,26px);letter-spacing:-.01em;color:#fff;word-break:break-word}
+.contact-item a:hover{color:var(--orange-bright)}
+.foot-left{display:flex;flex-direction:column;gap:14px}
+.foot-contact{display:flex;flex-wrap:wrap;gap:6px 26px;font-family:var(--cond);font-size:13px;letter-spacing:.02em;color:var(--muted)}
+.foot-contact a{color:#fff}
+.foot-contact a:hover{color:var(--orange-bright)}
 
 @media(max-width:920px){
   .stats{grid-template-columns:1fr 1fr}
@@ -402,12 +411,29 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
       <a class="btn" href="https://marketplace.autohaulerexchange.com/sign-up/customer" data-cta="primary-signup-bottom">Create your store account</a>
       <a class="btn ghost" href="#calculator" data-cta="secondary-calc-bottom">See potential savings</a>
     </div>
+    <div class="contact">
+      <div class="contact-item">
+        <span class="contact-k">Dealer support</span>
+        <a href="mailto:lithiadealer@autohaulerx.com" data-cta="support-email">lithiadealer@autohaulerx.com</a>
+      </div>
+      <!-- TEMP: AHX main line until a dedicated Lithia sales number is assigned -->
+      <div class="contact-item">
+        <span class="contact-k">Talk to sales</span>
+        <a href="tel:+12484809874" data-cta="sales-phone">(248) 480-9874</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="brand">Auto Hauler Exchange</div>
+    <div class="foot-left">
+      <div class="brand">Auto Hauler Exchange</div>
+      <div class="foot-contact">
+        <span>Dealer support: <a href="mailto:lithiadealer@autohaulerx.com">lithiadealer@autohaulerx.com</a></span>
+        <span>Sales: <a href="tel:+12484809874">(248) 480-9874</a></span>
+      </div>
+    </div>
     <p class="data-note">Figures reflect completed Lithia dealer loads on Auto Hauler Exchange, Dec 2024 &ndash; Jun 2026: 4,528 loads and 6,231 vehicles. Costs are all-in (carrier rate plus AHX platform fee) and stated per vehicle. The lane estimator is a modeled estimate, not a quote. Approved Lithia vendor.</p>
   </div>
 </footer>
