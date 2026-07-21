@@ -508,5 +508,20 @@ estimate();
   svg.addEventListener('mouseout',e=>{ if(e.target.classList&&e.target.classList.contains('nd')) tip.style.opacity='0'; });
 })();
 </script>
+<script>
+/* iframe auto-height reporter: tells a parent (e.g. Webflow at /lithia) how tall the page is */
+(function(){
+  if (window.self === window.top) return;               // only run when embedded
+  function height(){ return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); }
+  var last = 0;
+  function send(){ var h = height(); if (h !== last){ last = h; parent.postMessage({ ahxLithiaHeight: h }, "*"); } }
+  window.addEventListener("load", send);
+  window.addEventListener("resize", send);
+  document.addEventListener("click", function(){ setTimeout(send, 80); });  // FAQ toggles, steppers
+  if (window.ResizeObserver){ new ResizeObserver(send).observe(document.body); }
+  if (document.fonts && document.fonts.ready){ document.fonts.ready.then(send); }
+  [200,700,1500].forEach(function(t){ setTimeout(send, t); });
+})();
+</script>
 </body>
 </html>
