@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Auto Hauler Exchange for Lithia Stores</title>
-<meta name="description" content="42 Lithia stores already move their inventory on Auto Hauler Exchange. See the speed, the savings, and price a lane in seconds.">
+<meta name="description" content="42 Lithia stores already move their inventory on Auto Hauler Exchange. See the speed, the support, and how much your store could save vs. its current transport partner.">
 <style>
 /* ===== Fight Fraud font faces (self-hosted woff2, same as the series) ===== */
 @font-face{font-family:'Good Pro Xcond';font-weight:800;font-display:swap;src:url('https://cdn.prod.website-files.com/67085f7df6d68f752c924add/677419cb94adbefdf9369b85_Good%20Pro%20XCond%20Black.woff2') format('woff2')}
@@ -199,7 +199,7 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
     <p class="lede">Auto Hauler Exchange puts your shipment in front of <b>5,500+ vetted carriers</b> directly &mdash; no broker in the middle taking a cut you never see. Here is what other Lithia rooftops have actually paid, and how fast they got their units.</p>
     <div class="cta-row">
       <a class="btn" href="https://marketplace.autohaulerexchange.com/sign-up/customer" data-cta="primary-signup">Create your store account</a>
-      <a class="btn ghost" href="#calculator" data-cta="secondary-calc">Price a lane first</a>
+      <a class="btn ghost" href="#calculator" data-cta="secondary-calc">See potential savings</a>
     </div>
 
     <div class="stats">
@@ -215,7 +215,7 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
 <section class="sec-navy">
   <div class="wrap">
     <div class="eyebrow">Why stores switch</div>
-    <h2>Speed, savings, support.<br>In that order, every time.</h2>
+    <h2>Speed, savings,<br>and support.</h2>
     <div class="pillars">
       <div class="pillar">
         <span class="k">Speed</span>
@@ -227,12 +227,12 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
         <span class="k">Savings</span>
         <span class="big">$0.87<span style="font-size:.5em;color:var(--orange)">/mi</span></span>
         <h3>Per vehicle mile, all in</h3>
-        <p>Across 6,231 vehicles at an average haul of 609 miles &mdash; the AHX fee is already included, so nothing is added at invoice. Price your own lane below.</p>
+        <p>Across 6,231 vehicles at an average haul of 609 miles &mdash; the AHX fee is already included, so nothing is added at invoice. See your potential savings below.</p>
       </div>
       <div class="pillar">
         <span class="k">Support</span>
-        <span class="big">553</span>
-        <h3>Carriers used, all vetted</h3>
+        <span class="big">US-based</span>
+        <h3>Support team on every load</h3>
         <p>Insurance and authority are monitored continuously, not checked once. You get a named rep, and AHX pays the carrier &mdash; so you are never chasing a W-9.</p>
       </div>
     </div>
@@ -242,12 +242,12 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
 <!-- ================= CALCULATOR ================= -->
 <section id="calculator">
   <div class="wrap">
-    <div class="eyebrow">Lane estimator</div>
-    <h2>Price a lane against what<br>your broker charges you.</h2>
-    <p class="lede" style="margin-top:18px">Built from 4,528 completed Lithia loads. Enter a lane you run often and put your current cost next to it.</p>
+    <div class="eyebrow">Potential savings</div>
+    <h2>See what you could save vs.<br>your current transport partner.</h2>
+    <p class="lede" style="margin-top:18px">Built from 4,528 completed Lithia loads. Enter a lane you run often and what you pay for it today &mdash; we&rsquo;ll show what it clears at on AHX and what your store could keep.</p>
 
     <div class="ticket">
-      <div class="ticket-head"><span>Rate estimate</span><span id="ticketId">AHX-LITHIA</span></div>
+      <div class="ticket-head"><span>Savings estimate</span><span id="ticketId">AHX-LITHIA</span></div>
       <div class="ticket-in">
         <div class="field">
           <label for="miles">Lane distance (miles)</label>
@@ -268,28 +268,28 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
         <div class="field" style="margin-bottom:0">
           <label for="broker">What you pay today (per vehicle)</label>
           <input id="broker" type="number" min="0" step="25" value="750" inputmode="numeric">
-          <div class="hint">Optional. Leave blank to skip the comparison.</div>
+          <div class="hint">What your current partner or broker charges per vehicle. This is what we compare against.</div>
         </div>
       </div>
       <div class="ticket-out">
         <div class="out-row">
-          <span class="out-k">Estimated AHX cost per vehicle</span>
-          <div class="out-v" id="perVin">$522</div>
-          <div class="out-sub" id="range">Typical range $444 &ndash; $600</div>
+          <span class="out-k">Estimated savings per vehicle</span>
+          <div class="out-v" id="saveVeh" style="color:var(--orange)">Save $228</div>
+          <div class="out-sub" id="saveNote">30% below what you pay now.</div>
         </div>
         <div class="out-row">
-          <span class="out-k">Total for this lane</span>
-          <div class="out-v" style="font-size:32px" id="total">$522</div>
-          <div class="out-sub" id="cpm">$0.87 per vehicle mile</div>
+          <span class="out-k">Estimated total savings on this lane</span>
+          <div class="out-v" style="font-size:32px;color:var(--orange)" id="saveTotal">Save $228</div>
+          <div class="out-sub" id="saveTotalSub">On one unit vs. your current partner.</div>
         </div>
         <div class="out-row">
-          <span class="out-k">Versus your current cost</span>
-          <div class="delta" id="delta">Save $228 per vehicle</div>
-          <div class="delta-note" id="deltaNote">30% below what you pay now.</div>
+          <span class="out-k">What it clears at on AHX</span>
+          <div class="out-v" style="font-size:32px" id="ahxPer">$522</div>
+          <div class="out-sub" id="ahxSub">$522 per vehicle &middot; typical range $444 &ndash; $600</div>
         </div>
       </div>
       <div class="asterisk">
-        <b>* This is an estimate, not a quote.</b> It is based on the average cost per mile for Lithia stores on Auto Hauler Exchange across 4,528 completed loads. Your actual number may change with the size of the unit, carrier demand on the lane, and proximity of an available carrier &mdash; along with unit condition and time of year. You set the price you are willing to pay when you post.
+        <b>* This is an estimate, not a quote.</b> AHX pricing is based on the average cost per mile for Lithia stores across 4,528 completed loads, and the savings shown compare that estimate to the current cost you enter. Your actual number may change with the size of the unit, carrier demand on the lane, and proximity of an available carrier &mdash; along with unit condition and time of year. You set the price you are willing to pay when you post.
       </div>
     </div>
   </div>
@@ -392,7 +392,7 @@ footer .brand{font-family:var(--xcond);font-weight:800;font-size:20px;letter-spa
     <p class="lede" style="color:#dfe4ff">That is the whole pilot. Pick a lane you run every week, post it, and put the invoice next to your broker&rsquo;s. Forty-two Lithia stores have already done exactly that.</p>
     <div class="cta-row">
       <a class="btn" href="https://marketplace.autohaulerexchange.com/sign-up/customer" data-cta="primary-signup-bottom">Create your store account</a>
-      <a class="btn ghost" href="#calculator" data-cta="secondary-calc-bottom">Price a lane first</a>
+      <a class="btn ghost" href="#calculator" data-cta="secondary-calc-bottom">See potential savings</a>
     </div>
   </div>
 </section>
@@ -413,21 +413,33 @@ const money=n=>'$'+Math.round(n).toLocaleString();
 function estimate(){
   const mi=Math.max(1,Math.min(3000,+$('miles').value||0));
   const n=units;
-  const per=mi*RATE;
+  const per=mi*RATE;              // estimated AHX cost per vehicle
   const total=per*n;
-  $('perVin').textContent=money(per);
-  $('range').textContent='Typical range '+money(per*LO)+' – '+money(per*HI);
-  $('total').textContent=money(total);
-  $('cpm').textContent='$0.87 per vehicle mile';
+  const ORANGE='var(--orange)', MUTED='var(--muted)';
+  $('ahxPer').textContent=money(per);
+  $('ahxSub').textContent=money(per)+' per vehicle · typical range '+money(per*LO)+' – '+money(per*HI);
+
   const broker=+$('broker').value||0;
-  const dEl=$('delta'), note=$('deltaNote');
-  if(!broker){ dEl.textContent='—'; dEl.className='delta neg'; note.textContent='Add your current per-vehicle cost to compare.'; }
-  else{
-    const diff=broker-per, pct=Math.abs(diff/broker*100);
-    if(diff>0){ dEl.className='delta'; dEl.textContent='Save '+money(diff)+' per vehicle';
-      note.textContent=pct.toFixed(0)+'% below what you pay now. On '+(n>1?n+' units':'one unit')+' that is '+money(diff*n)+' on this lane alone.'; }
-    else{ dEl.className='delta neg'; dEl.textContent=money(Math.abs(diff))+' above your current cost';
-      note.textContent='Worth a call — lane mix, timing and unit type all move this.'; }
+  const sVeh=$('saveVeh'), sNote=$('saveNote'), sTot=$('saveTotal'), sTotSub=$('saveTotalSub');
+  const unitLabel=(n>1?n+' units':'one unit');
+  if(!broker){
+    sVeh.style.color=MUTED; sVeh.textContent='—';
+    sNote.textContent='Enter your current per-vehicle cost to see your savings.';
+    sTot.style.color=MUTED; sTot.textContent='—';
+    sTotSub.textContent='On '+unitLabel+', AHX clears at about '+money(total)+'.';
+  }else{
+    const diff=broker-per, pct=diff/broker*100;
+    if(diff>0){
+      sVeh.style.color=ORANGE; sVeh.textContent='Save '+money(diff);
+      sNote.textContent=pct.toFixed(0)+'% below what you pay now.';
+      sTot.style.color=ORANGE; sTot.textContent='Save '+money(diff*n);
+      sTotSub.textContent='On '+unitLabel+' vs. your current partner.';
+    }else{
+      sVeh.style.color=MUTED; sVeh.textContent=money(Math.abs(diff))+' more';
+      sNote.textContent='AHX comes in above this lane — worth a call on mix and timing.';
+      sTot.style.color=MUTED; sTot.textContent='—';
+      sTotSub.textContent='Lane mix, timing and unit type all move this.';
+    }
   }
   $('ticketId').textContent='AHX-LITHIA-'+String(Math.round(mi)).padStart(4,'0')+'-'+n;
 }
