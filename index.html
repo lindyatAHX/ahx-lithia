@@ -512,7 +512,7 @@ estimate();
 /* iframe auto-height reporter: tells a parent (e.g. Webflow at /lithia) how tall the page is */
 (function(){
   if (window.self === window.top) return;               // only run when embedded
-  function height(){ return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); }
+  function height(){ return Math.ceil(document.body.getBoundingClientRect().height); }  // body content only — not pinned to the iframe height, so it can shrink
   var last = 0;
   function send(){ var h = height(); if (h !== last){ last = h; parent.postMessage({ ahxLithiaHeight: h }, "*"); } }
   window.addEventListener("load", send);
